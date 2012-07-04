@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteBase /m/galley/
+RewriteRule ^image/([^/]+)/(.*)$ image.php?img=$2&type=$1 [L]
+#RewriteRule ^view/(.*)$ pic.php?img=$1 [L]
+RewriteRule ^view/(.*)$ slideshow.php?img=$1 [L]
+RewriteRule ^album/(.*)$ index.php?path=$1 [L]
+
+
+AuthUserFile /home/mhn/www/galley/.htpasswd
+AuthType Basic
+AuthName "Galley"
+require valid-user
